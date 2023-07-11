@@ -12,7 +12,7 @@ window.jQuery = $
 
 export default Vue.extend ({
   name: 'App',
-  mounted: function() {
+  async mounted() {
     var scripts = [
       "https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js",
     ];
@@ -25,33 +25,34 @@ export default Vue.extend ({
       document.head.appendChild(tag);
     });
 
-    //Bold BI Server URL (ex: http://localhost:5000/bi, http://demo.boldbi.com/bi)
-    let rootUrl = "http://localhost:5000";
-    //For Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be empty string.
-    let siteIdentifier = "site/site1";
-    //ID of the Dashboard
-    let dashboardId = "";
-    //Your Bold BI application environment. (If Cloud, you should use `cloud`, if Enterprise, you should use `enterprise`)
-    let environment = "enterprise";
     //Url of the GetDetails api in ASP.NET Core server and act as Authorization Server.
     let authorizationUrl = "http://localhost:61377/api/boldbiembed/getdetails";
 
-    let dashboard = BoldBI.create({
-                    serverUrl: rootUrl + "/"+siteIdentifier,
-                    dashboardId: dashboardId,
-                    embedContainerId: "dashboard",
-                    embedType: BoldBI.EmbedType.Component,
-                    environment: environment == "enterprise" ? BoldBI.Environment.Enterprise : BoldBI.Environment.Cloud,
-                    width: "100%",
-                    height: window.innerHeight + "px",
-                    mode : BoldBI.Mode.View,
-                    expirationTime: 100000,
-                    authorizationServer: {
-                        url: authorizationUrl
-                    }
-                });
-                dashboard.loadDashboard(); 
-                console.log(dashboard);
+     try {
+      const response = await fetch('http://localhost:61377/api/boldbiembed/getserverdetails');
+      const data = await response.json();
+      renderDashboard(data);
+          
+    } catch (error) {
+        this.errorMessage = 'Error: embedConfig.json file is not found.';
+    }
+
+    function renderDashboard(data) {
+      let dashboard = BoldBI.create({
+        serverUrl: data.ServerUrl + '/' + data.SiteIdentifier,
+        dashboardId: data.DashboardId,
+        embedContainerId: 'dashboard',
+        embedType: data.EmbedType,
+        environment: data.Environment,
+        width: '100%',
+        height: window.innerHeight + 'px',
+        expirationTime: 100000,
+        authorizationServer: {
+          url: authorizationUrl,
+        },
+      });
+      dashboard.loadDashboard();
+    }
   }
 });
 </script>
@@ -63,6 +64,5 @@ export default Vue.extend ({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 </style>
