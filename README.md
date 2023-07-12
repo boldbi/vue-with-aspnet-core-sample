@@ -4,7 +4,7 @@
 
  ## Dashboard view
 
-![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
+![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/83fa08d3-0211-4cd1-98ef-1d366c9db665)
 
  ## Requirements/Prerequisites
 
@@ -29,9 +29,9 @@
      ![Embed Settings Download](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d27d4cfc-6a3e-4c34-975e-f5f22dea6172)
      ![EmbedConfig Properties](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d6ce925a-0d4c-45d2-817e-24d6d59e0d63)
 
-  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample) within the application. Please ensure you have placed it in the application, as shown in the following image.
+  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/vue-with-aspnet-core-sample/tree/master/BoldBI.Embed.Sample/BoldBI.Embed.Sample) within the application. Please ensure you have placed it in the application, as shown in the following image.
     
-    ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/bdb83a3e-02e4-4e99-ad57-717438e5ec5c)
+    ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/e4c11292-d3e2-4a35-80a8-9eadf727bec2)
 
  ## Run a Sample Using Command Line Interface 
     
@@ -67,7 +67,7 @@
   > **NOTE:** If you are using Node.js version higher than v16.17, you can update the `package.json` file by adding the following line as a `script` within the `serve` command. Make ensure that you replace the existing line with this updated script. Then run the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.<br/>
     "serve": "vue-cli-service serve --openssl-legacy-provider"
 
-![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/1407fd9b-abaa-47f5-b02a-fbadd8bc2388)
+![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/83fa08d3-0211-4cd1-98ef-1d366c9db665)
 
 Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/vuejs-with-core/#how-to-run-the-sample) to know how to run the sample.
 
