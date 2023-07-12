@@ -12,7 +12,7 @@
  * [Visual Studio Code](https://code.visualstudio.com/download)
  * [Node.js](https://nodejs.org/en/)
 
- > **NOTE:** Node.js v14.16 to v18.16 are supported.
+ > **NOTE:** Node.js v12.11 to v18.16 are supported.
 
 #### Supported browsers
   
@@ -42,11 +42,10 @@
   * Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/vue-with-aspnet-core-sample/tree/master/Vue) where the project is located.
    
   * To install all dependent packages, use the following command `npm install`.
+    
+    > **NOTE:** If you are using Node.js version higher than v16.17, you should enter the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.
 
-  * Finally, run the application using the following command `npm install -g @vue/cli` and `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
-
-  > **NOTE:** If you are using Node.js version higher than v16.17, you can update the `package.json` file by adding the following line as a `script` within the `serve` command. Make ensure that you replace the existing line with this updated script. Then run the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.<br/>
-    "serve": "vue-cli-service serve --openssl-legacy-provider"
+  * Finally, run the application using the following command `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
 
  ## Developer IDE
 
@@ -62,10 +61,9 @@
    
   * To install all dependent packages, use the following command `npm install`.
 
-  * Finally, run the application using the following command `npm install -g @vue/cli` and `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
+    > **NOTE:** If you are using Node.js version higher than v16.17, you should enter the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.
 
-  > **NOTE:** If you are using Node.js version higher than v16.17, you can update the `package.json` file by adding the following line as a `script` within the `serve` command. Make ensure that you replace the existing line with this updated script. Then run the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.<br/>
-    "serve": "vue-cli-service serve --openssl-legacy-provider"
+  * Finally, run the application using the following command `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
 
 ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/83fa08d3-0211-4cd1-98ef-1d366c9db665)
 
