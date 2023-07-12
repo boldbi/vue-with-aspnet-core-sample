@@ -26,7 +26,7 @@ export default Vue.extend ({
     });
 
     //Url of the GetDetails api in ASP.NET Core server and act as Authorization Server.
-    let authorizationUrl = "http://localhost:5000/api/boldbiembed/getdetails";
+    let authorizationUrl = "http://localhost:5000/api/boldbiembed/authorizationserver";
 
      try {
       const response = await fetch('http://localhost:5000/api/boldbiembed/getserverdetails');
