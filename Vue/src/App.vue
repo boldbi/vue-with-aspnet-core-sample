@@ -45,7 +45,7 @@ export default Vue.extend ({
         embedType: data.EmbedType,
         environment: data.Environment,
         width: '100%',
-        height: window.innerHeight + 'px',
+        height: window.innerHeight -18 + 'px',
         expirationTime: 100000,
         authorizationServer: {
           url: authorizationUrl,

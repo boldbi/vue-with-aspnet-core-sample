@@ -62,7 +62,7 @@
    
   * To install all dependent packages, use the following command `npm install`.
 
-  * Finally, run the application using the following command `npm install -g @vue/cli` and `npm run serve`. After executing the command, the application will automatically launch in the default browser. You can access it at the specified port number (e.g., http://localhost:8080/).
+  * Finally, run the application using the following command `npm install -g @vue/cli` and `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
 
   > **NOTE:** If you are using Node.js version higher than v16.17, you can update the `package.json` file by adding the following line as a `script` within the `serve` command. Make ensure that you replace the existing line with this updated script. Then run the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.<br/>
     "serve": "vue-cli-service serve --openssl-legacy-provider"
