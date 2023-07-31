@@ -1,6 +1,6 @@
-# Bold BI Embedded Sample in Vue with ASP.NET Core
+# Bold BI Embedded Sample in Vue.js with ASP.NET Core
 
- This Bold BI Vue with ASP.NET Core sample contains the Dashboard embedding samples. In this sample Vue application act as front-end and ASP.NET Core act as back-end application. This application aims to demonstrate how to render the dashboard available on your Bold BI server.
+ This Bold BI Vue.js with ASP.NET Core sample contains the Dashboard embedding samples. In this sample Vue application act as front-end and ASP.NET Core act as back-end application. This application aims to demonstrate how to render the dashboard available on your Bold BI server.
 
  ## Dashboard view
 
@@ -8,7 +8,6 @@
 
  ## Requirements/Prerequisites
 
- * [Go installer](https://go.dev/dl/)
  * [Visual Studio Code](https://code.visualstudio.com/download)
  * [Node.js](https://nodejs.org/en/)
 
