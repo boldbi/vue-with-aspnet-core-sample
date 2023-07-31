@@ -12,7 +12,7 @@
  * [Visual Studio Code](https://code.visualstudio.com/download)
  * [Node.js](https://nodejs.org/en/)
 
- > **NOTE:** Node.js v12.11 to v18.16 are supported.
+ > **NOTE:** Node.js v12.13 to v18.16 are supported.
 
 #### Supported browsers
   
@@ -43,8 +43,6 @@
    
   * To install all dependent packages, use the following command `npm install`.
     
-    > **NOTE:** If you are using Node.js version higher than v16.17, you should enter the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.
-
   * Finally, run the application using the following command `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
 
  ## Developer IDE
@@ -60,8 +58,6 @@
   * Open the `Vue` sample in a new window of **Visual Studio Code**.
    
   * To install all dependent packages, use the following command `npm install`.
-
-    > **NOTE:** If you are using Node.js version higher than v16.17, you should enter the following command in the terminal `$env:NODE_OPTIONS="--openssl-legacy-provider"`.
 
   * Finally, run the application using the following command `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., http://localhost:8080). Copy this URL and paste it into your default web browser.
 
