@@ -31,7 +31,15 @@ export default Vue.extend ({
      try {
       const response = await fetch('http://localhost:5000/api/boldbiembed/getserverdetails');
       const data = await response.json();
-      renderDashboard(data);
+      // Transform camelCase keys to PascalCase
+      const transformedEmbedConfigData = {
+        DashboardId: data.dashboardId,
+        EmbedType: data.embedType,
+        Environment: data.environment,
+        ServerUrl: data.serverUrl,
+        SiteIdentifier: data.siteIdentifier
+      };
+      renderDashboard(transformedEmbedConfigData);
           
     } catch (error) {
         this.errorMessage = 'Error: embedConfig.json file is not found.';
