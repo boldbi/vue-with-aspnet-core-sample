@@ -36,11 +36,26 @@ namespace BoldBI.Embed.Sample.Controllers
         [Route("GetServerDetails")]
         public IActionResult GetServerDetails()
         {
-            var jsonData = System.IO.File.ReadAllText("embedConfig.json");
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
-            GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
-            return Ok(jsonData);
+            try
+            {
+                var jsonData = System.IO.File.ReadAllText("embedConfig.json");
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
+                GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
+
+                return Json(new
+                {
+                    DashboardId = GlobalAppSettings.EmbedDetails.DashboardId,
+                    ServerUrl = GlobalAppSettings.EmbedDetails.ServerUrl,
+                    EmbedType = GlobalAppSettings.EmbedDetails.EmbedType,
+                    Environment = GlobalAppSettings.EmbedDetails.Environment,
+                    SiteIdentifier = GlobalAppSettings.EmbedDetails.SiteIdentifier
+                });
+            }
+            catch
+            {
+                return View("EmbedConfigErrorLog");
+            }
         }
 
         [HttpGet]
