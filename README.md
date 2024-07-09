@@ -11,7 +11,7 @@
  * [Visual Studio Code](https://code.visualstudio.com/download)
  * [Node.js](https://nodejs.org/en/)
 
- > **NOTE:** Node.js v12.13 to v20.15 are supported.
+ > **NOTE:** Node.js v18.17 to v20.15 are supported.
 
 #### Supported browsers
   
