@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import $ from 'jquery'
+import $ from 'jquery';
 import {BoldBI} from '@boldbi/boldbi-embedded-sdk';
 window.jQuery = $
 
-export default Vue.extend ({
+export default ({
   name: 'App',
   async mounted() {
     var scripts = [
@@ -50,14 +49,11 @@ export default Vue.extend ({
         serverUrl: data.ServerUrl + '/' + data.SiteIdentifier,
         dashboardId: data.DashboardId,
         embedContainerId: 'dashboard',
-        embedType: data.EmbedType,
-        environment: data.Environment,
         width: '100%',
         height: window.innerHeight -18 + 'px',
-        expirationTime: 100000,
         authorizationServer: {
-          url: authorizationUrl,
-        },
+          url: authorizationUrl
+        }
       });
       dashboard.loadDashboard();
     }
