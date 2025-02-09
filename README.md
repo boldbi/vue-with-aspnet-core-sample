@@ -4,7 +4,7 @@
 
 ## Dashboard view
 
-![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/83fa08d3-0211-4cd1-98ef-1d366c9db665)
+![Dashboard View](/images/dashboard.png)
 
 ## Requirements/Prerequisites
 
@@ -15,22 +15,22 @@
 
 ### Supported browsers
   
-* Google Chrome, Microsoft Edge, Mozilla Firefox.
+* Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
 ## Configuration
 
 * Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code?utm_source=github&utm_medium=backlinks) to enable it.
 
-    ![Embed Settings](https://github.com/boldbi/aspnet-core-sample/assets/91586758/b3a81978-9eb4-42b2-92bb-d1e2735ab007)
+    ![Embed Settings](/images/enable-embedsecretkey.png)
 
 * To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file?utm_source=github&utm_medium=backlinks) for reference. Additionally, you can refer to the following image for visual guidance.
 
-     ![Embed Settings Download](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d27d4cfc-6a3e-4c34-975e-f5f22dea6172)
-     ![EmbedConfig Properties](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d6ce925a-0d4c-45d2-817e-24d6d59e0d63)
+     ![Embed Settings Download](/images/download-embedsecretkey.png)
+     ![EmbedConfig Properties](/images/embedconfig-file.png)
 
 * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/vue-with-aspnet-core-sample/tree/master/BoldBI.Embed.Sample/BoldBI.Embed.Sample) within the application. Please ensure you have placed it in the application, as shown in the following image.
 
-    ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/e4c11292-d3e2-4a35-80a8-9eadf727bec2)
+    ![EmbedConfig image](/images/embedconfig-location.png)
 
 ## Run a Sample Using Command Line Interface
 
@@ -46,7 +46,7 @@
 
 ## Developer IDE
 
-* Visual Studio Code(<https://code.visualstudio.com/download>)
+* [Visual Studio Code](<https://code.visualstudio.com/download>)
 
 ### Run a Sample Using Visual Studio Code
 
@@ -60,7 +60,7 @@
 
 * Finally, run the application using the following command `npm run serve`. After the application has started, it will display a URL in the command line interface, typically something like (e.g., <http://localhost:8080>). Copy this URL and paste it into your default web browser.
 
-![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/83fa08d3-0211-4cd1-98ef-1d366c9db665)
+![dashboard image](/images/dashboard.png)
 
 Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/vuejs-with-core/#how-to-run-the-sample?utm_source=github&utm_medium=backlinks) to know how to run the sample.
 
