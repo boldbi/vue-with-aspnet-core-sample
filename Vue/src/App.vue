@@ -24,12 +24,13 @@ export default ({
       document.head.appendChild(tag);
     });
 
-    //Url of the GetDetails api in ASP.NET Core server and act as Authorization Server.
-    let authorizationUrl = "http://localhost:5000/api/boldbiembed/authorizationserver";
+    //Url of the TokenGeneration action in BoldBIEmbedController of the ASP.NET Core application
+    let tokenGenerationUrl = "http://localhost:5000/api/boldbiembed/tokengeneration";
 
      try {
       const response = await fetch('http://localhost:5000/api/boldbiembed/getserverdetails');
       const data = await response.json();
+
       // Transform camelCase keys to PascalCase
       const transformedEmbedConfigData = {
         DashboardId: data.dashboardId,
@@ -39,23 +40,38 @@ export default ({
         SiteIdentifier: data.siteIdentifier
       };
       renderDashboard(transformedEmbedConfigData);
-          
+
     } catch (error) {
         this.errorMessage = 'Error: embedConfig.json file is not found.';
     }
 
-    function renderDashboard(data) {
-      let dashboard = BoldBI.create({
-        serverUrl: data.ServerUrl + '/' + data.SiteIdentifier,
-        dashboardId: data.DashboardId,
-        embedContainerId: 'dashboard',
-        width: '100%',
-        height: window.innerHeight -18 + 'px',
-        authorizationServer: {
-          url: authorizationUrl
-        }
+    function getEmbedToken() {
+      return fetch(tokenGenerationUrl, {  // Backend application URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Token fetch failed");
+        return response.text();
       });
-      dashboard.loadDashboard();
+  }
+
+  function renderDashboard(data) {
+    getEmbedToken()
+      .then(accessToken => {
+        const dashboard = BoldBI.create({
+          serverUrl: data.ServerUrl + "/" + data.SiteIdentifier,
+          dashboardId: data.DashboardId,
+          embedContainerId: "dashboard",
+          embedToken: accessToken
+        });
+
+        dashboard.loadDashboard();
+      })
+      .catch(err => {
+        console.error("Error rendering dashboard:", err);
+      });
     }
   }
 });
